@@ -12,11 +12,12 @@ $requestedScript = array_shift($routeParams);
 
 
 $resources = [
-  'login' => '/../php/login/login.php',
-  'handle_login' => '../php/login/handle_login.php',
-  'register' => '../php/register/register.php',
-  'handle_register' => '../php/register/handle_register.php',
-  'logout' => '../php/logout/logout.php'
+    'login' => '/../php/login/login.php',
+    'handle_login' => '../php/login/handle_login.php',
+    'register' => '../php/register/register.php',
+    'handle_register' => '../php/register/handle_register.php',
+    'logout' => '../php/logout/logout.php',
+    'play' => '../php/game/hangman.php'
 ];
 
 foreach ($resources as $name => $path) {

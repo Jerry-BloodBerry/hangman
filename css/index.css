@@ -34,3 +34,21 @@ footer {
 .my-c-button:hover {
     cursor: pointer;
 }
+.keyboard-button {
+    border: 1px solid black;
+    border-radius: 10px;
+    min-width: 41px;
+}
+.keyboard-button:hover {
+    cursor: pointer;
+    background-color: #478017;
+    color: white;
+    border-color: lawngreen;
+}
+#keyboard-table {
+    border-collapse:separate;
+    border-spacing:0 10px;
+}
+#keyboard-table tbody td {
+    max-width: 15px;
+}

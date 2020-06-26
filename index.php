@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="col-4">
                                     <a href="/register" class="btn btn-primary my-c-button">Create account</a>
-                                    <button class="btn btn-success my-c-button">Play the game</button>
+                                    <a href="/play" class="btn btn-success my-c-button">Play the game</a>
                                 </div>
                             </div>
                         </div>
