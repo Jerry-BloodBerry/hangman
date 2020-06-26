@@ -4,11 +4,10 @@
     padding: 1px 10px;
 }
 footer {
-    position: absolute;
-    bottom: 0;
     width: 100%;
     background-color: white;
     color: black;
+    margin-top: 10px;
 }
 #footer-copy {
     bottom: 0;
@@ -23,4 +22,15 @@ footer {
     border-radius: 20px;
     padding: 10px 10px;
     margin-top: 15px;
+}
+.my-c-header {
+    color: white;
+    width: 100%;
+}
+.my-c-button {
+    width: 100%;
+    margin-bottom: 10px;
+}
+.my-c-button:hover {
+    cursor: pointer;
 }
