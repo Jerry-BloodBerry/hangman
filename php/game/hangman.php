@@ -8,6 +8,11 @@ include_once __DIR__ . '/../templates/header/header.php';
 ?>
     <div class="container">
         <div class="row justify-content-center my-5">
+            <div class="col-2 text-right">
+                <h3>Score: <span id="score_container">0</span></h3>
+            </div>
+        </div>
+        <div class="row justify-content-center my-5">
             <div class="col-10">
                 <div class="row">
                     <div class="col-6" id="keyboard-container">
@@ -109,14 +114,13 @@ include_once __DIR__ . '/../templates/header/header.php';
                         </table>
                     </div>
                     <div class="col-6 text-center" id="hangman-container">
-                        <img src="/img/hang0.png" alt="hangman">
+                        <img src="/img/hang0.png" id="hangman-img" alt="hangman">
                     </div>
                 </div>
             </div>
         </div>
         <div class="row justify-content-center my-5">
-            <div class="col-10" id="words_container">
-
+            <div class="col-10 text-center" id="words_container">
             </div>
         </div>
     </div>

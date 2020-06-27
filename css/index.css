@@ -34,7 +34,7 @@ footer {
 .my-c-button:hover {
     cursor: pointer;
 }
-.keyboard-button {
+.keyboard-button, .hangman-button {
     border: 1px solid black;
     border-radius: 10px;
     min-width: 41px;
@@ -43,7 +43,7 @@ footer {
     cursor: pointer;
     background-color: #478017;
     color: white;
-    border-color: lawngreen;
+    border-color: #478017;
 }
 #keyboard-table {
     border-collapse:separate;
@@ -51,4 +51,33 @@ footer {
 }
 #keyboard-table tbody td {
     max-width: 15px;
+}
+.keyboard-button-good {
+    background-color: #478017;
+    color: white;
+    border: 1px solid #478017;
+    border-radius: 10px;
+    min-width: 41px;
+}
+.keyboard-button-good:hover {
+    color:white;
+}
+.keyboard-button-bad {
+    background-color: #80001c;
+    color: white;
+    border: 1px solid #80001c;
+    border-radius: 10px;
+    min-width: 41px;
+}
+.keyboard-button-bad:hover {
+    color:white;
+}
+.hangman-button {
+    min-height: 30px;
+}
+.hangman-button:hover {
+    cursor: default !important;
+}
+.word_group {
+    margin-bottom: 10px;
 }
