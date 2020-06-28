@@ -9,7 +9,7 @@ include_once __DIR__ . '/../templates/header/header.php';
     <div class="container">
         <div class="row justify-content-center my-5">
             <div class="col-2 text-right">
-                <h3>Score: <span id="score_container">0</span></h3>
+                <h3>Score: <span id="score_container">120</span></h3>
             </div>
         </div>
         <div class="row justify-content-center my-5">

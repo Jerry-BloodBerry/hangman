@@ -23,6 +23,7 @@ class Login
 
                 if(password_verify($password,$row['hash'])) {
                     $_SESSION['username'] = $row['login'];
+                    $_SESSION['user_id'] = $row['id'];
                     return true;
                 }
                 return false;
