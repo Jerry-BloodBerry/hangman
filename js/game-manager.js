@@ -27,6 +27,42 @@ $(function () {
         }
 
     });
+    $.ajax({
+        url: "/php/game/load_scores.php",
+        type: "POST",
+        dataType: "json",
+        method: "POST",
+        data: {
+            'id': word_id
+        },
+        success:function(data)
+        {
+            let user_scores = data.scores;
+            let score_table = $("#score-tbody");
+            let score_i = 1;
+            console.log(user_scores);
+            user_scores = user_scores.sort(compareScores);
+            console.log(user_scores);
+            for(u_score of user_scores)
+            {
+                let arrkey = Object.keys(u_score)[0];
+                console.log(arrkey);
+                score_table.append
+                (`<tr>
+                      <td>${score_i}</td>
+                      <td>${arrkey}</td>
+                      <td>${u_score[arrkey]}</td> 
+                </tr>`);
+                score_i++;
+            }
+        }
+        ,
+        error: function(data)
+        {
+            console.log('nie wyszło!');
+        }
+
+    });
     $(".keyboard-button").click(function () {
         //console.log(this.value);
         let response = $.ajax({
@@ -124,4 +160,15 @@ function drawLetterFields(w_count, sizes)
             $(`#container_word_${i}`).append(`<input type="button" class="btn hangman-button" id="letter_${i}_${j}" disabled/>`);
         }
     }
+}
+
+function compareScores(score1,score2)
+{
+    let comparison = 0;
+    if(parseInt(score1[`${Object.keys(score1)[0]}`])<parseInt(score2[`${Object.keys(score2)[0]}`]))
+    {
+        comparison = 1;
+    }
+    else comparison = -1;
+    return comparison;
 }

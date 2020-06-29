@@ -13,7 +13,7 @@ include_once __DIR__ . '/../templates/header/header.php';
             </div>
         </div>
         <div class="row justify-content-center my-5">
-            <div class="col-10">
+            <div class="col-9">
                 <div class="row">
                     <div class="col-6" id="keyboard-container">
                         <table class="table table-borderless table-sm" id="keyboard-table">
@@ -118,6 +118,21 @@ include_once __DIR__ . '/../templates/header/header.php';
                     </div>
                 </div>
             </div>
+            <div class="col-3">
+                <div class="table-responsive">
+                    <table class="table table-warning table-striped">
+                        <thead>
+                            <tr>
+                                <th>Place</th>
+                                <th>User</th>
+                                <th>Score</th>
+                            </tr>
+                        </thead>
+                        <tbody id="score-tbody">
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
         <div class="row justify-content-center my-5">
             <div class="col-10 text-center" id="words_container">
@@ -133,7 +148,6 @@ include_once __DIR__ . '/../templates/header/header.php';
                     <button class="btn btn-success w-75 text-center mt-5" onclick="location.reload()">Play again</button>
                     <button class="btn btn-danger w-75 text-center my-2" onclick="window.location.href='/'">Quit game</button>
                 </div>
-
             </div>
         </div>
     </div>

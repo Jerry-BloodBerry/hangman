@@ -125,11 +125,9 @@ class GameLogic
         while($row = $stmt->fetch(PDO::FETCH_ASSOC))
         {
             $scores [] = [
-                'username' => $row['login'],
-                'score' => $row['top_score']
+                $row['login'] => $row['top_score']
             ];
         }
-
         echo json_encode(array('scores' => $scores));
     }
 }
