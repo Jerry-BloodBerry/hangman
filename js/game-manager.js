@@ -39,22 +39,29 @@ $(function () {
         success:function(data)
         {
             let user_scores = data.scores;
-            let score_table = $("#score-tbody");
-            let score_i = 1;
-            console.log(user_scores);
-            user_scores = user_scores.sort(compareScores);
-            console.log(user_scores);
-            for(u_score of user_scores)
+            if(user_scores.length===0)
             {
-                let arrkey = Object.keys(u_score)[0];
-                console.log(arrkey);
-                score_table.append
-                (`<tr>
+                let score_table_container = $("#score-table-container");
+                score_table_container.empty();
+                score_table_container.append(`<h3 class="text-center">No one has solved this word yet!</h3>`);
+            }
+            else
+            {
+                let score_table = $("#score-tbody");
+                let score_i = 1;
+                user_scores = user_scores.sort(compareScores);
+                for(u_score of user_scores)
+                {
+                    let arrkey = Object.keys(u_score)[0];
+                    console.log(arrkey);
+                    score_table.append
+                    (`<tr>
                       <td>${score_i}</td>
                       <td>${arrkey}</td>
                       <td>${u_score[arrkey]}</td> 
                 </tr>`);
-                score_i++;
+                    score_i++;
+                }
             }
         }
         ,

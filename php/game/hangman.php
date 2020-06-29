@@ -124,7 +124,7 @@ include_once __DIR__ . '/../templates/header/header.php';
             </div>
         </div>
         <div class="row justify-content-center my-2">
-            <div class="col-4">
+            <div class="col-4" id="score-table-container">
                 <div class="table-responsive">
                     <table class="table table-warning table-striped">
                         <thead>
