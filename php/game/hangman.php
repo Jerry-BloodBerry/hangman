@@ -13,7 +13,7 @@ include_once __DIR__ . '/../templates/header/header.php';
             </div>
         </div>
         <div class="row justify-content-center my-5">
-            <div class="col-9">
+            <div class="col-10">
                 <div class="row">
                     <div class="col-6" id="keyboard-container">
                         <table class="table table-borderless table-sm" id="keyboard-table">
@@ -118,24 +118,26 @@ include_once __DIR__ . '/../templates/header/header.php';
                     </div>
                 </div>
             </div>
-            <div class="col-3">
+        </div>
+        <div class="row justify-content-center my-5">
+            <div class="col-10 text-center" id="words_container">
+            </div>
+        </div>
+        <div class="row justify-content-center my-2">
+            <div class="col-4">
                 <div class="table-responsive">
                     <table class="table table-warning table-striped">
                         <thead>
-                            <tr>
-                                <th>Place</th>
-                                <th>User</th>
-                                <th>Score</th>
-                            </tr>
+                        <tr>
+                            <th>Place</th>
+                            <th>User</th>
+                            <th>Score</th>
+                        </tr>
                         </thead>
                         <tbody id="score-tbody">
                         </tbody>
                     </table>
                 </div>
-            </div>
-        </div>
-        <div class="row justify-content-center my-5">
-            <div class="col-10 text-center" id="words_container">
             </div>
         </div>
     </div>
