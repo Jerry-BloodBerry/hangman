@@ -31,7 +31,12 @@
                                     <img src="/img/hangman.png" class="img" style="height: 100%; width: 75%;" alt="hangman">
                                 </div>
                                 <div class="col-4">
-                                    <a href="/register" class="btn btn-primary my-c-button">Create account</a>
+                                    <?php
+                                        if(!isset($_SESSION['username']))
+                                            {
+                                                echo '<a href="/register" class="btn btn-primary my-c-button">Create account</a>';
+                                            }
+                                        ?>
                                     <a href="/play" class="btn btn-success my-c-button">Play the game</a>
                                 </div>
                             </div>

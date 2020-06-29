@@ -8,8 +8,8 @@ if(empty($_POST['username']) || empty($_POST['password']))
     header("Location: login");
     exit();
 }
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = htmlspecialchars(strip_tags($_POST['username']));
+$password = htmlspecialchars(strip_tags($_POST['password']));
 
 if(Login::loginUser($username,$password))
 {

@@ -8,8 +8,8 @@ if(empty($_POST['username']) || empty($_POST['password']))
     header("Location: register");
     exit();
 }
-$username = $_POST['username'];
-$password = $_POST['password'];
+$username = htmlspecialchars(strip_tags($_POST['username']));
+$password = htmlspecialchars(strip_tags($_POST['password']));
 
 if(Register::registerUser($username,$password))
 {

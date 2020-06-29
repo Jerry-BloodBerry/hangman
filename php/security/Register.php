@@ -8,9 +8,6 @@ class Register
         $database = new Database();
         $db = $database->getConnection();
 
-        // sanitize username
-        $username = htmlspecialchars(strip_tags($username));
-
         $query = "SELECT * FROM user WHERE login=?";
         $stmt = $db->prepare($query);
         $stmt->bindParam(1,$username);

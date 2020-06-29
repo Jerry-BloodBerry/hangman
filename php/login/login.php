@@ -1,4 +1,9 @@
 <?php
+session_start();
+if(isset($_SESSION['username']))
+{
+    header("Location: /");
+}
 include_once __DIR__ . '/../templates/header/header.php';
 ?>
 <div class="container">
