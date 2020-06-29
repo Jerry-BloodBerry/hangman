@@ -17,7 +17,7 @@ if (session_status() == PHP_SESSION_NONE) {
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <a class="navbar-brand" href="#">
+    <a class="navbar-brand" href="/">
         <img src="/img/hangman36.png" width="36" height="36" class="d-inline-block align-top" alt="" loading="lazy">
         The Hangman
     </a>
