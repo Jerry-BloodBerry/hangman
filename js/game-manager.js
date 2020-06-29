@@ -53,7 +53,6 @@ $(function () {
         $(this).attr("disabled", "disabled");
         $(this).removeClass("keyboard-button");
         let score_element = $("#score_container");
-        score_element.text(score);
         if(contains_letter)
         {
             $(this).addClass("keyboard-button-good");
@@ -61,7 +60,6 @@ $(function () {
             score_element.css("color", "#478017");
             let letter_positions = response.responseJSON.positions;
             letter_sum -= letter_positions.length;
-            console.log(letter_sum);
             for(position of letter_positions)
             {
                 $(`#letter_${position['word']}_${position['index']}`).val(this.value);
@@ -75,14 +73,41 @@ $(function () {
             $("#hangman-img").attr("src", `/img/hang${hang_count}.png`);
             score_element.css("color", "#80001c");
         }
+        score_element.text(score);
         $(this).blur();
-        if(hang_count===12)
+        if(hang_count===12||letter_sum===0)
         {
-            alert("You hanged!");
-        }
-        if(letter_sum===0)
-        {
-            alert("You win!");
+            if(hang_count===12)
+            {
+                $("#end-game-image").attr("src","/img/you_hang.png");
+                $("#end-game-title").text("GAME OVER");
+            }
+            if(letter_sum===0)
+            {
+                $("#end-game-image").attr("src","/img/you_win.png");
+                $("#end-game-title").text("VICTORY");
+
+                $.ajax({
+                    url: "/php/game/save_score.php",
+                    type: "POST",
+                    dataType: "json",
+                    method: "POST",
+                    data: {
+                        'word_id': word_id,
+                        'score': score
+                    },
+                    success:function(data)
+                    {
+                    }
+                    ,
+                    error: function(data)
+                    {
+                        console.log('Fatal error');
+                    }
+
+                });
+            }
+            $('#endGameModal').modal('show');
         }
     })
 });

@@ -124,7 +124,19 @@ include_once __DIR__ . '/../templates/header/header.php';
             </div>
         </div>
     </div>
+    <div id="endGameModal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="endGameModalLabel" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content pb-2">
+                <h3 class="text-center my-2" id="end-game-title"></h3>
+                <div class="modal-body text-center">
+                    <img src="//placehold.it/1000x600" class="img-responsive" style="width: 100%" id="end-game-image" alt="Endgame image">
+                    <button class="btn btn-success w-75 text-center mt-5" onclick="location.reload()">Play again</button>
+                    <button class="btn btn-danger w-75 text-center my-2" onclick="window.location.href='/'">Quit game</button>
+                </div>
 
+            </div>
+        </div>
+    </div>
     <script src="/js/game-manager.js" type="text/javascript"></script>
 <?php
 include_once __DIR__ . '/../templates/footer/footer.php';
