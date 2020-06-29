@@ -17,8 +17,7 @@ $resources = [
     'register' => '../php/register/register.php',
     'handle_register' => '../php/register/handle_register.php',
     'logout' => '../php/logout/logout.php',
-    'play' => '../php/game/hangman.php',
-    'load_database' => '../php/config/load_database.php'
+    'play' => '../php/game/hangman.php'
 ];
 
 foreach ($resources as $name => $path) {

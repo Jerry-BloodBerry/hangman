@@ -41,7 +41,7 @@ class GameLogic
      * @param int $id id of the word in which we are looking for the letter
      * @param string $letter the letter entered by the user which we are checking against
      */
-    public static function checkWordLetter(int $id, string $letter)
+    public static function checkWordLetter($id, $letter)
     {
         $database = new Database();
         $db = $database->getConnection();
@@ -92,7 +92,7 @@ class GameLogic
      * @param int $word_id word id
      * @param int $score user score
      */
-    public static function saveUserScore(int $user_id, int $word_id, int $score)
+    public static function saveUserScore($user_id, $word_id, $score)
     {
         $database = new Database();
         $db = $database->getConnection();
@@ -109,7 +109,7 @@ class GameLogic
         }
     }
 
-    public static function fetchWordLeaderboard(int $word_id)
+    public static function fetchWordLeaderboard($word_id)
     {
         $database = new Database();
         $db = $database->getConnection();
