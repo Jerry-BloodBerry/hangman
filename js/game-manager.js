@@ -85,6 +85,8 @@ $(function () {
             },
             success:function(data)
             {
+                score = data.score;
+                hang_count = data.hang_count;
             }
             ,
             error: function(data)
@@ -100,7 +102,6 @@ $(function () {
         if(contains_letter)
         {
             $(this).addClass("keyboard-button-good");
-            score+=20;
             score_element.css("color", "#478017");
             let letter_positions = response.responseJSON.positions;
             letter_sum -= letter_positions.length;
@@ -112,12 +113,10 @@ $(function () {
         else
         {
             $(this).addClass("keyboard-button-bad");
-            hang_count++;
-            score-=10;
             $("#hangman-img").attr("src", `/img/hang${hang_count}.png`);
             score_element.css("color", "#80001c");
         }
-        score_element.text(score);
+        score_element.text(response.responseJSON.score);
         $(this).blur();
         if(hang_count===12||letter_sum===0)
         {
@@ -157,8 +156,7 @@ $(function () {
                     dataType: "json",
                     method: "POST",
                     data: {
-                        'word_id': word_id,
-                        'score': score
+                        'word_id': word_id
                     },
                     success:function(data)
                     {

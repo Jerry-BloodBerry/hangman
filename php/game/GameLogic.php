@@ -79,26 +79,31 @@ class GameLogic
                 }
                 $word_counter++;
             }
-            echo json_encode(array("contains" => true, "positions" => $positions));
+            $_SESSION['user_score'] += 20;
+            echo json_encode(array("contains" => true, "positions" => $positions, "score" => $_SESSION['user_score'], "hang_count" => $_SESSION['hang_count']));
         }
         else
         {
-            echo json_encode(array("contains" => false));
+            $_SESSION['user_score'] -= 10;
+            $_SESSION['hang_count']++;
+            echo json_encode(array("contains" => false, "score" => $_SESSION['user_score'], "hang_count" => $_SESSION['hang_count']));
         }
     }
 
     /**
      * @param int $user_id user id
      * @param int $word_id word id
-     * @param int $score user score
      */
-    public static function saveUserScore($user_id, $word_id, $score)
+    public static function saveUserScore($user_id, $word_id)
     {
         $database = new Database();
         $db = $database->getConnection();
 
         $query = "INSERT INTO user_scores SET user_id=:u_id, score=:score, word_id=:w_id";
         $stmt = $db->prepare($query);
+
+        $score=$_SESSION['user_score'];
+
         $stmt->bindParam(":u_id", $user_id);
         $stmt->bindParam(":score", $score);
         $stmt->bindParam("w_id", $word_id);

@@ -7,6 +7,5 @@ if (session_status() == PHP_SESSION_NONE) {
 
 $u_id = $_SESSION['user_id'];
 $word_id = $_POST['word_id'];
-$score = $_POST['score'];
 
-GameLogic::saveUserScore($u_id, $word_id, $score);
+GameLogic::saveUserScore($u_id, $word_id);
