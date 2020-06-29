@@ -145,6 +145,7 @@ include_once __DIR__ . '/../templates/header/header.php';
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content pb-2">
                 <h3 class="text-center my-2" id="end-game-title"></h3>
+                <p class="text-center my-2" id="word-reveal-text"></p>
                 <div class="modal-body text-center">
                     <img src="//placehold.it/1000x600" class="img-responsive" style="width: 100%" id="end-game-image" alt="Endgame image">
                     <button class="btn btn-success w-75 text-center mt-5" onclick="location.reload()">Play again</button>

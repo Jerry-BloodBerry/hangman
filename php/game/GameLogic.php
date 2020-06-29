@@ -130,4 +130,25 @@ class GameLogic
         }
         echo json_encode(array('scores' => $scores));
     }
+
+    /**
+     * @param int $id word id
+     */
+    public static function revealWord($id)
+    {
+        $database = new Database();
+        $db = $database->getConnection();
+
+        $query = "SELECT word FROM words WHERE id=?";
+
+        $stmt = $db->prepare($query);
+        $stmt->bindParam(1,$id);
+
+        $stmt->execute();
+
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+        $word = $row['word'];
+
+        echo json_encode(array('word' => $word));
+    }
 }

@@ -9,6 +9,7 @@ $(function () {
         url: "/php/game/start_game.php",
         type: "GET",
         dataType: "json",
+        async: false,
         method: "GET",
         success:function(data)
         {
@@ -23,7 +24,7 @@ $(function () {
         ,
         error: function(data)
         {
-            console.log('nie wyszło!');
+            console.log('Fatal error. Server did not respond properly.');
         }
 
     });
@@ -59,7 +60,7 @@ $(function () {
         ,
         error: function(data)
         {
-            console.log('nie wyszło!');
+            console.log('Fatal error. Server did not respond properly.');
         }
 
     });
@@ -117,6 +118,26 @@ $(function () {
             {
                 $("#end-game-image").attr("src","/img/you_hang.png");
                 $("#end-game-title").text("GAME OVER");
+                $.ajax({
+                    url: "/php/game/reveal_word.php",
+                    type: "POST",
+                    dataType: "json",
+                    method: "POST",
+                    async: false,
+                    data: {
+                        'word_id': word_id
+                    },
+                    success:function(data)
+                    {
+                        $("#word-reveal-text").text("The hidden word was: " + data.word);
+                    }
+                    ,
+                    error: function(data)
+                    {
+                        console.log('Fatal error');
+                    }
+
+                });
             }
             if(letter_sum===0)
             {
